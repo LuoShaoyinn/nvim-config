@@ -5,9 +5,9 @@ local opt = {silent = true, noremap = true}
 map("t", "<ESC>", "<C-\\><C-n>", opt)
 
 -- bufferline
-map("", "<A-b>h", "<Cmd>BufferLineCyclePrev<CR>", opt)
-map("", "<A-b>l", "<Cmd>BufferLineCycleNext<CR>", opt)
-map("", "<A-b>w", "<Cmd>bdelete<CR>", opt)
+map("", "<A-h>", "<Cmd>BufferLineCyclePrev<CR>", opt)
+map("", "<A-l>", "<Cmd>BufferLineCycleNext<CR>", opt)
+map("", "<A-w>", "<Cmd>bdelete<CR>", opt)
 
 -- n, optvim tree
 map("", "<A-t>t", "<Cmd>NvimTreeToggle<CR>", opt)
