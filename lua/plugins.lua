@@ -25,7 +25,10 @@ require("lazy").setup({
         dependencies = 'nvim-tree/nvim-web-devicons', 
     },
     { -- nvim gdb
-        'https://github.com/sakhnik/nvim-gdb'
+        'https://github.com/sakhnik/nvim-gdb',
+    },
+    {
+        'https://github.com/tikhomirov/vim-glsl',
     }
 })
 
