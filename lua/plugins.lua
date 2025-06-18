@@ -14,23 +14,9 @@ vim.opt.rtp:prepend(lazypath)
 local md = {"n", "i"}
 
 require("lazy").setup({
-    { -- bufferline
-        "akinsho/bufferline.nvim",
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        }
-    }, 
-	{ -- nvim-tree
-        'kyazdani42/nvim-tree.lua',
-        dependencies = 'nvim-tree/nvim-web-devicons', 
-    },
-    { -- nvim gdb
-        'https://github.com/sakhnik/nvim-gdb',
-    },
-    {
-        'https://github.com/tikhomirov/vim-glsl',
-    }
+    require("plugins.bufferline")(),
+    require("plugins.nvim-tree")(),
+    require("plugins.nvim-gdb")(),
+    require("plugins.vim-glsl")(),
+    -- Add any other plugins here
 })
-
-require("plugins.bufferline")
-require("plugins.nvim-tree")

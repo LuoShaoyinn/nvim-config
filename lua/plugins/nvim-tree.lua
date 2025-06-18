@@ -1,31 +1,82 @@
-local status, nvim_tree = pcall(require, "nvim-tree")
-if not status then
-	vim.notify("nvim-tree not found")
-	return
+return function()
+    return {
+    'kyazdani42/nvim-tree.lua',
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    cmd = { "NvimTreeToggle", "NvimTreeOpen", "NvimTreeFindFile", "NvimTreeClose" },
+    opts = {
+      -- Your nvim-tree specific configuration goes here
+        sort_by = "case_sensitive", 
+        git = {
+            ignore = false,
+            enable = true,
+        },
+        disable_netrw = true,
+        hijack_netrw = true,
+        view = {
+            width = 30,
+            float = {
+                enable = false,
+                open_win_config = {
+                    width = 30,
+                    height = 30,
+                    col = 0,
+                    row = 0,
+                    relative = "editor",
+                    border = "single",
+                    title = "NvimTree",
+                    title_pos = "center"
+                }
+            }
+        },
+        renderer = {
+            group_empty = true,
+            highlight_git = true,
+            icons = {
+                git_placement = "before",
+                show = {
+                    file = true,
+                    folder = true,
+                    folder_arrow = true,
+                    git = true,
+                },
+            },
+        },
+        filters = {
+            dotfiles = false,
+            custom = {},
+            exclude = {},
+        },
+        update_focused_file = {
+            enable = false,
+            update_cwd = false,
+            ignore_list = {},
+        },
+        system_open = {
+            cmd = nil,
+            args = {},
+        },
+        diagnostics = {
+            enable = false,
+            show_on_dirs = false,
+            icons = {
+                error = "",
+                hint = "",
+                info = "",
+            },
+        },
+        actions = {
+            open_file = {
+            quit_on_open = false,
+            resize_window = true,
+            window_picker = {
+            enable = true,
+            exclude = {
+                filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
+                buftype = { "nofile", "terminal", "prompt" },
+            },
+            },
+            }
+        }
+    }
+    }
 end
-
-
-nvim_tree.setup({
-    sort_by = "case_sensitive", 
--- 是否显示 git 状态
-    git = {
-    enable = true,
-  	},
--- 过滤文件
-	filters = {
-        dotfiles = true, -- 过滤 dotfile
-		custom = { "node_modules" }, -- 其他过滤目录
-    },
-    view = {
--- 文件浏览器展示位置，左侧：left, 右侧：right
-    side = "left",
--- 行号是否显示
-    number = false,
-    relativenumber = false,
-    signcolumn = "yes" -- 显示图标
-    },
-    renderer = {
-        group_empty = true,
-    },
-})
-
