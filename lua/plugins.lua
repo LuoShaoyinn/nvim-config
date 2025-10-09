@@ -18,5 +18,6 @@ require("lazy").setup({
     require("plugins.nvim-tree")(),
     require("plugins.nvim-gdb")(),
     require("plugins.vim-glsl")(),
+    require("plugins.nvim-lspconfig")(),
     -- Add any other plugins here
 })
