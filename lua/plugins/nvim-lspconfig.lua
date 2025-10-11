@@ -35,6 +35,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gT', vim.lsp.buf.type_definition, opts)
 
     -- Navigate Diagnostics (errors, warnings, etc.)
+    vim.keymap.set('n', '\\d', vim.diagnostic.open_float, opts)
     vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 end
@@ -43,7 +44,7 @@ return function()
 
 vim.lsp.set_log_level("Warn")
 vim.lsp.enable('ccls')
-vim.lsp.enable('ruff')
+vim.lsp.enable('ty')
 
 return {
     -- 'neovim/nvim-lspconfig' is the plugin that houses all LSP server configurations
@@ -75,20 +76,11 @@ return {
                 } 
             }
         })
-        vim.lsp.config("ruff", {
-            cmd = {"ruff", "server"}, 
+        vim.lsp.config("ty", {
+            cmd = {"ty", "server"}, 
             on_attach = on_attach,
             single_file_support = true,
             root_dir = get_root_dir(vim.api.nvim_buf_get_name(0)),
-            init_options = {
-                compilationDatabaseDirectory = "",
-                cache = {
-                    directory = vim.fn.expand('~') .. '/.cache/ruff'
-                },
-                index = {
-                    threads = 16;
-                }
-            }
         })
     end,
 }
