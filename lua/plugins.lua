@@ -19,5 +19,6 @@ require("lazy").setup({
     require("plugins.nvim-gdb")(),
     require("plugins.vim-glsl")(),
     require("plugins.nvim-lspconfig")(),
+    require("plugins.avante")(),
     -- Add any other plugins here
 })
