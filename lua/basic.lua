@@ -20,3 +20,8 @@ vim.bo.tabstop = 4
 -- windows
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+
+-- fold
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldenable = false
