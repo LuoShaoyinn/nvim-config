@@ -40,8 +40,6 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 end
 
-return function()
-
 vim.lsp.set_log_level("Warn")
 vim.lsp.enable('ccls')
 vim.lsp.enable('ty')
@@ -84,5 +82,4 @@ return {
         })
     end,
 }
-end
 

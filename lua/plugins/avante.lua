@@ -1,5 +1,4 @@
-return function()
-    return {
+return {
     {
         "yetone/avante.nvim",
         event = "VeryLazy",
@@ -20,7 +19,7 @@ return function()
         },
         -- ADD THIS SECTION BELOW
         dependencies = {
-            "nvim-treesitter/nvim-treesitter",
+            -- "nvim-treesitter/nvim-treesitter",
             "stevearc/dressing.nvim",
             "nvim-lua/plenary.nvim",
             "MunifTanjim/nui.nvim",
@@ -40,4 +39,3 @@ return function()
         },
     },
 }
-end

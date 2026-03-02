@@ -14,11 +14,12 @@ vim.opt.rtp:prepend(lazypath)
 local md = {"n", "i"}
 
 require("lazy").setup({
-    require("plugins.bufferline")(),
-    require("plugins.nvim-tree")(),
-    require("plugins.nvim-gdb")(),
-    require("plugins.vim-glsl")(),
-    require("plugins.nvim-lspconfig")(),
-    require("plugins.avante")(),
+    require("plugins.bufferline"),
+    require("plugins.nvim-tree"),
+    require("plugins.nvim-gdb"),
+    require("plugins.vim-glsl"),
+    require("plugins.nvim-lspconfig"),
+    require("plugins.avante"),
+    require("plugins.copilot"),
     -- Add any other plugins here
 })

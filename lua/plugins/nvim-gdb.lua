@@ -1,5 +1,4 @@
-return function()
-  return {
+return {
     'https://github.com/sakhnik/nvim-gdb',
     cmd = { "Gdb", "GdbDebug", "GdbRun" }, 
     opts = {
@@ -15,5 +14,4 @@ return function()
             "set disassembly-flavor intel",
         },
     }
-  }
-end
+}
