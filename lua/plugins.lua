@@ -18,6 +18,7 @@ require("lazy").setup({
     require("plugins.nvim-tree"),
     require("plugins.nvim-gdb"),
     require("plugins.vim-glsl"),
+    require("plugins.vimtex"),
     require("plugins.nvim-lspconfig"),
     require("plugins.copilot"),
     -- Add any other plugins here
