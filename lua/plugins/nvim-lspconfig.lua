@@ -55,7 +55,9 @@ return {
             cmd = {"ccls"}, 
             on_attach = on_attach,
             single_file_support = true,
-            root_dir = get_root_dir(vim.api.nvim_buf_get_name(0)),
+            root_dir = function(bufnr, on_dir)
+                on_dir(get_root_dir(vim.api.nvim_buf_get_name(bufnr)))
+            end,
             init_options = {
                 compilationDatabaseDirectory = "",
                 cache = {
@@ -68,7 +70,6 @@ return {
                     extraArgs = { 
                         "-I/usr/include", 
                         "-I/usr/local/include", 
-                        "-I/usr/include/c++/13",
                     },
                     resourceDir = ""
                 } 
